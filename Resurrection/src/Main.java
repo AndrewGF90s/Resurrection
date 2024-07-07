@@ -10,23 +10,39 @@ public class Main {
     }
 
     public static int[] changeArray(int[] newArray, int number) {
-        int position = newArray.length - 1;
-        for (int i = 0; i < position; i++) {
-            if (newArray[i] == number) {
-                while (newArray[position] == number && position > i) {
-                    position--;
+        int position =0;
+//        for (int i = 0; i < position; i++) {
+//            if (newArray[i] == number) {
+//                while (newArray[position] == number && position > i) {
+//                    position--;
+//
+//                }
+//                int temp = newArray[i];
+//                newArray[i] = newArray[position];
+//                newArray[position] = temp;
+//                position--;
+//            }
+//
+        for (int i =0; i < newArray.length-1; i++) {
+            int temp =0;
+            if (newArray[i]==number) {
 
+                while (newArray[position] == number && newArray[i]>newArray[position]) {
+                    position++;
                 }
-                int temp = newArray[i];
-                newArray[i] = newArray[position];
-                newArray[position] = temp;
-                position--;
+                    temp= newArray[i];
+                    newArray[i]= newArray[position];
+                    newArray[position]= temp;
+                      position++;
+                                    }
+
+
             }
 
-        }
-
         return newArray;
+        }
     }
-}
+
+
 
 

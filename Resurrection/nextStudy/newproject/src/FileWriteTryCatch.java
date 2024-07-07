@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Practic {
+public class FileWriteTryCatch {
     public static void main(String[] args) throws IOException {
 //        StringBuilder str = new StringBuilder();
 //        for (int i = 0; i < 1_000_000; i++) {
