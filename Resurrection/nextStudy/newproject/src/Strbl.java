@@ -7,7 +7,7 @@ public class Strbl {
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <=count*2 ; i++) {
             sb.append("c1").append("c2");
-            sb.
+
 
         }
         System.out.println(sb);

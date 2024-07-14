@@ -20,25 +20,27 @@ public class ParseJSON {
 //        System.out.println(str.concat(str1).concat(str2).toUpperCase());
 //        System.out.println(sb.append(str).append(str1).append(str2));
         String ans = "select * from students where";
-        String JSON ="{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
-        System.out.println(Answer(ans,JSON));
+        String JSON = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
+        System.out.println(Answer(ans, JSON));
     }
 
-   public static StringBuilder Answer(String QUERY, String PARAMS) {
-        String paramsRep = PARAMS.replace("{","").replace("\"","").replace("}","");
+    public static StringBuilder Answer(String QUERY, String PARAMS) {
+        String paramsRep = PARAMS.replace("{", "").replace("\"", "").replace("}", "");
         String name = paramsRep.split(",")[0].split(":")[1];
         String from = paramsRep.split(",")[1].split(":")[1];
         String town = paramsRep.split(",")[2].split(":")[1];
         StringBuilder sb = new StringBuilder(QUERY);
-            if(!name.equals("NULL")){
-                sb.append(" name=").append("'").append(name).append("'");
-            }
-            if(!from.equals("NULL")) {
-                sb.append(" and ").append("country=").append("'").append(from).append("'");
-            }
-            if(!town.equals("NULL")) {
-                sb.append(" and ").append(" city=").append("'").append(town).append("'");
-            }
-      return sb;
-   };
+        if (!name.equals("NULL")) {
+            sb.append(" name=").append("'").append(name).append("'");
+        }
+        if (!from.equals("NULL")) {
+            sb.append(" and ").append("country=").append("'").append(from).append("'");
+        }
+        if (!town.equals("NULL")) {
+            sb.append(" and ").append(" city=").append("'").append(town).append("'");
+        }
+        return sb;
+    }
+
+    ;
 }
